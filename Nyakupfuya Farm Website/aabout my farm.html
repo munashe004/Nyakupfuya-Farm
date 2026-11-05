@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Farm | Abounding Harvest</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    /* PAGE CUSTOM STYLING OVERRIDES */
+    section {
+      padding: 50px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-header .section-tag {
+      color: #2d6a4f;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      color: #1b4332;
+      font-size: 2rem;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* Hero Styling */
+    /* Hero Section with Background Image & Overlay */
+.about-hero {
+  background: linear-gradient(rgba(15, 37, 28, 0.75), rgba(15, 37, 28, 0.75)), 
+              url('bckg.avif') center/cover no-repeat;
+  padding: 100px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-hero .section-tag {
+  color: #52b788;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin: 15px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+    /* Image Wrappers */
+    .about-image-wrapper img, .story-image img, .team-card img, .testimonial-card img {
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Cards Hover & Lift Effect */
+    .mission-card, .why-card, .team-card, .testimonial-card {
+      background: #ffffff;
+      border: 1px solid #eef2f0;
+      border-radius: 12px;
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .mission-card:hover, .why-card:hover, .team-card:hover, .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .mission-card i, .why-card i {
+      font-size: 2rem;
+      color: #2d6a4f;
+      margin-bottom: 15px;
+    }
+
+    /* Section Background Alternations */
+    .bg-light {
+      background-color: #f9fbf9;
+    }
+
+    /* Fixed Gap Before Footer */
+    .future-section {
+      padding: 40px 0 20px 0;
+    }
+
+    .farm-cta {
+      padding: 50px 0;
+      background: #1b4332;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .farm-cta h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .farm-cta p {
+      color: #d8f3dc;
+      margin-bottom: 25px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .cta-buttons .btn-primary {
+      background: #52b788;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .cta-buttons .btn-secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #52b788;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="top-bar" style="background: #1b4332; color: #d8f3dc;">
+    <div class="container top-bar-content" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 20px; font-size: 0.85rem;">
+      <div class="top-info" style="display: flex; gap: 20px;">
+        <span><i class="fa-solid fa-phone"></i> Dudely & Dave: +263 77 105 8127 / +263 78 279 8993</span>
+        <span><i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com</span>
+        <span><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</span>
+      </div>
+      <div class="top-socials" style="display: flex; gap: 12px;">
+        <a href="https://facebook.com" target="_blank" rel="noopener" style="color:#d8f3dc;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/263782798993" target="_blank" rel="noopener" style="color:#d8f3dc;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" style="color:#d8f3dc;"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="main-header" style="background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000;">
+    <div class="container header-flex" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #2d6a4f; font-size: 1.4rem; font-weight: 700;">
+        <img src="logo.jpg" alt="Nyakupfuya Farm Logo" style="width: 45px; height: 45px; object-fit: contain;">
+        <span>Abounding <strong>Harvest</strong></span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul class="nav-list" style="display: flex; gap: 22px; list-style: none; margin: 0; padding: 0;">
+          <li><a href="index.html" style="text-decoration: none; color: #333; font-weight: 600;">Home</a></li>
+          <li><a href="aabout my farm.html" class="active" style="text-decoration: none; color: #2d6a4f; font-weight: 600;">About Our Farm</a></li>
+          <li><a href="shop.html" style="text-decoration: none; color: #333; font-weight: 600;">Our Produce</a></li>
+          <li><a href="wholesale.html" style="text-decoration: none; color: #333; font-weight: 600;">Wholesale & Bulk</a></li>
+          <li><a href="harvest_calender.html" style="text-decoration: none; color: #333; font-weight: 600;">Harvest Calendar</a></li>
+          <li><a href="contact uss.html" style="text-decoration: none; color: #333; font-weight: 600;">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <!-- ================= HERO ================= -->
+<section class="about-hero">
+  <div class="container">
+    <span class="section-tag">WELCOME TO NYAKUPFUYA FARM</span>
+    <h1>Growing More Than Crops...<br>Growing Trust, Quality & Community.</h1>
+    <p>Every harvest tells a story of dedication, hard work and commitment to feeding families, businesses and communities with quality produce.</p>
+  </div>
+</section>
+  <!-- ================= ABOUT INTRODUCTION ================= -->
+  <section class="about-section">
+    <div class="container about-grid">
+      <div class="about-image-wrapper">
+        <img src="farmm.avif" alt="Nyakupfuya Farm">
+      </div>
+      <div class="about-content">
+        <span class="section-tag">WHO WE ARE</span>
+        <h2>A Farm Built On Hard Work And Vision</h2>
+        <p>Nyakupfuya Farm is more than a place where crops are grown—it is the result of years of determination, commitment and a passion for agriculture. Every seed planted represents hope, every harvest represents progress, and every customer represents a relationship built on trust.</p>
+        <p>From supplying fresh vegetables to producing quality grains, our mission has always been simple: provide agricultural products that meet the highest standards while serving our community with integrity.</p>
+        <div style="margin-top: 20px;">
+          <a href="shop.html" class="btn btn-primary" style="background: #2d6a4f; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">Explore Our Produce</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR HISTORY ================= -->
+  <section class="farm-history bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">OUR HISTORY</span>
+        <h2>Every Great Farm Has A Story</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; color: #4a5568; line-height: 1.8;">
+        <p>Nyakupfuya Farm began with a simple dream—to transform fertile land into a source of fresh food, opportunity and hope. What started as a modest farming venture gradually grew through persistence, innovation and the support of loyal customers.</p>
+        <p>Season after season, the farm expanded its production, introduced new farming techniques and strengthened relationships with buyers. Each challenge became an opportunity to learn, improve and grow stronger.</p>
+        <p>Today, Nyakupfuya Farm proudly supplies fresh vegetables, grains and agricultural products to households, retailers and commercial buyers while remaining committed to quality, sustainability and customer satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOUNDER'S MESSAGE ================= -->
+  <section class="founders-message">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">A MESSAGE FROM THE FOUNDERS</span>
+        <h2>Leading With Purpose</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-image">
+          <img src="dud.jpg" alt="Founders of Nyakupfuya Farm">
+        </div>
+        <div class="story-content" style="background: #f4f9f5; padding: 30px; border-radius: 12px; border-left: 4px solid #2d6a4f;">
+          <p style="font-style: italic; font-size: 1.05rem; line-height: 1.7; color: #2d3748; margin-bottom: 15px;">"Nyakupfuya Farm was established with one purpose in mind: to produce quality food while creating opportunities for our community. We believe that every harvest reflects our commitment to excellence, honesty and continuous improvement.</p>
+          <p style="font-style: italic; font-size: 1.05rem; line-height: 1.7; color: #2d3748; margin-bottom: 20px;">As our farm continues to grow, our greatest achievement remains the trust our customers place in us. We are grateful for every family, business and partner who has chosen Nyakupfuya Farm."</p>
+          <h4 style="color: #1b4332; margin: 0;">— Dudely & Dave</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MISSION, VISION & VALUES ================= -->
+  <section class="mission-section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">OUR PURPOSE</span>
+        <h2>What Drives Us Every Day</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto;">Everything we do is guided by a commitment to quality agriculture, customer satisfaction and responsible farming.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Our Mission</h3>
+          <p>To produce fresh, high-quality agricultural products while promoting sustainable farming practices and delivering exceptional service to every customer.</p>
+        </div>
+
+        <div class="mission-card">
+          <i class="fa-solid fa-eye"></i>
+          <h3>Our Vision</h3>
+          <p>To become one of Zimbabwe's most trusted agricultural producers, known for quality, innovation and dependable supply.</p>
+        </div>
+
+        <div class="mission-card">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Our Values</h3>
+          <ul style="padding-left: 20px; color: #555; line-height: 1.8;">
+            <li>Integrity</li>
+            <li>Quality</li>
+            <li>Innovation</li>
+            <li>Teamwork</li>
+            <li>Customer Satisfaction</li>
+            <li>Sustainability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR FARMING PHILOSOPHY ================= -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">OUR FARMING PHILOSOPHY</span>
+        <h2>How We Produce Quality Every Season</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fa-solid fa-seedling"></i>
+          <h3>Healthy Crops</h3>
+          <p>We carefully manage every stage of crop production, from planting to harvesting, to maintain high standards of quality.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-droplet"></i>
+          <h3>Responsible Resource Use</h3>
+          <p>We strive to use water, soil and other resources responsibly to support long-term agricultural productivity.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-award"></i>
+          <h3>Quality Assurance</h3>
+          <p>Every harvest is inspected to help ensure customers receive produce they can rely on.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Community Partnership</h3>
+          <p>We value lasting relationships with customers, employees and the wider community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section class="about-timeline bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">MILESTONES</span>
+        <h2>Our Journey Over The Years</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto;">Every season has contributed to the growth of Nyakupfuya Farm. These milestones represent our commitment to continuous improvement.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2010</div>
+          <div class="timeline-content">
+            <h3>The Beginning</h3>
+            <p>Nyakupfuya Farm was established with a vision of producing quality food while creating opportunities for the local community.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2014</div>
+          <div class="timeline-content">
+            <h3>Farm Expansion</h3>
+            <p>The cultivated land increased, allowing more vegetables and grains to be produced for local markets.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-content">
+            <h3>Wholesale Supply</h3>
+            <p>The farm began supplying retailers and commercial buyers with reliable, high-quality agricultural products.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">Today</div>
+          <div class="timeline-content">
+            <h3>Growing Every Season</h3>
+            <p>We continue investing in better farming methods, improved quality and stronger customer relationships.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR TEAM ================= -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">OUR PEOPLE</span>
+        <h2>Meet The Team Behind Every Harvest</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto;">Behind every successful harvest is a dedicated team working together to produce quality food.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="dud.jpg" alt="Dudely & Dave">
+          <h3>Dudely & Dave</h3>
+          <span style="color: #2d6a4f; font-weight: 600; display: block; margin-bottom: 8px;">Founders</span>
+          <p>Visionary leaders responsible for guiding the farm's growth and long-term development.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="man.jpg" alt="Farm Manager">
+          <h3>Manager Name</h3>
+          <span style="color: #2d6a4f; font-weight: 600; display: block; margin-bottom: 8px;">Farm Manager</span>
+          <p>Coordinates day-to-day operations and ensures every activity meets our quality standards.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="sup.jpg" alt="Field Supervisor">
+          <h3>Supervisor Name</h3>
+          <span style="color: #2d6a4f; font-weight: 600; display: block; margin-bottom: 8px;">Field Supervisor</span>
+          <p>Leads field teams and oversees planting, irrigation and harvesting.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="opp.jpg" alt="Operations Manager">
+          <h3>Operations Manager</h3>
+          <span style="color: #2d6a4f; font-weight: 600; display: block; margin-bottom: 8px;">Operations</span>
+          <p>Ensures products are prepared, packed and delivered efficiently to customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORKER STORIES ================= -->
+  <section class="worker-interviews bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">VOICES FROM OUR FARM</span>
+        <h2>The People Who Make Every Harvest Possible</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <img src="worker1.jpg" alt="Worker">
+          <h3>Worker Name</h3>
+          <h5 style="color: #2d6a4f; margin-bottom: 10px;">Vegetable Production Team</h5>
+          <p>"I enjoy seeing the crops grow from small seedlings into healthy harvests. Every day reminds me that our work helps feed families."</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="worker2.jpg" alt="Worker">
+          <h3>Worker Name</h3>
+          <h5 style="color: #2d6a4f; margin-bottom: 10px;">Irrigation Team</h5>
+          <p>"Working together as a team allows us to produce quality crops throughout the season while caring for our fields."</p>
+        </div>
+
+        <div class="testimonial-card">
+          <img src="worker3.jpg" alt="Worker">
+          <h3>Worker Name</h3>
+          <h5 style="color: #2d6a4f; margin-bottom: 10px;">Harvest Team</h5>
+          <p>"Our greatest reward is knowing customers receive fresh produce harvested with care."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PHOTO GALLERY ================= -->
+  <section class="farm-gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FARM LIFE</span>
+        <h2>A Glimpse Into Life At Nyakupfuya Farm</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <img src="fmaa.jpg" alt="Farm">
+        <img src="tmmoo.jpg" alt="Harvest">
+        <img src="workers.jpg" alt="Workers">
+        <img src="field1.avif" alt="Fields">
+        <img src="vegges.jpg" alt="Vegetables">
+        <img src="sunrisee.jpg" alt="Sunrise Farm">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMUNITY IMPACT ================= -->
+  <section class="community-impact bg-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">OUR COMMUNITY</span>
+        <h2>Growing Together With Our Community</h2>
+        <p style="color: #666; max-width: 650px; margin: 0 auto;">At Nyakupfuya Farm, we believe agriculture is about more than producing food. It is about creating opportunities, supporting local families and contributing to a stronger agricultural future.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Employment</h3>
+          <p>We create employment opportunities for members of our local community and promote teamwork, skill development and personal growth.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-seedling"></i>
+          <h3>Food Security</h3>
+          <p>Our produce helps supply fresh vegetables and grains that contribute to healthy households and businesses.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-handshake"></i>
+          <h3>Partnerships</h3>
+          <p>We value long-term relationships with retailers, wholesalers and local communities built on trust and reliability.</p>
+        </div>
+
+        <div class="why-card">
+          <i class="fa-solid fa-earth-africa"></i>
+          <h3>Sustainability</h3>
+          <p>We aim to care for our land and use responsible farming practices that support future generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR FUTURE ================= -->
+  <section class="future-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">LOOKING AHEAD</span>
+        <h2>Building The Future Of Nyakupfuya Farm</h2>
+      </div>
+      <p style="text-align:center; max-width:800px; margin:auto; line-height:1.8; color: #4a5568;">
+        As agriculture continues to evolve, Nyakupfuya Farm remains committed to embracing innovation, improving productivity and delivering even greater value to our customers. Our vision is to become one of Zimbabwe's most trusted agricultural producers while maintaining the values that have guided us since the beginning.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CALL TO ACTION ================= -->
+  <section class="farm-cta">
+    <div class="container">
+      <h2>Become Part Of Our Journey</h2>
+      <p>Whether you're looking for fresh farm produce, wholesale supply or a long-term agricultural partner, we'd love to hear from you.</p>
+      <div class="cta-buttons">
+        <a href="shop.html" class="btn btn-primary">Browse Our Produce</a>
+        <a href="contact uss.html" class="btn btn-secondary">Contact Our Farm</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact" class="main-footer">
+    <div class="container">
+      
+      <!-- Newsletter Strip -->
+      <div class="footer-newsletter-banner">
+        <div class="newsletter-text">
+          <h3>Subscribe to Farm Updates</h3>
+          <p>Get weekly harvest alerts and fresh produce discounts.</p>
+        </div>
+       
+        <form action="https://formspree.io/f/xyegdaql" method="POST" class="newsletter-form">
+          <input type="hidden" name="_subject" value="New Farm Newsletter Subscriber">
+          <input type="email" name="subscriber_email" class="newsletter-input" placeholder="Enter your email address..." required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        
+        <!-- Brand & Social -->
+        <div class="footer-logo">
+          <a href="index.html" class="logo footer-logo">
+            <img src="logo.jpg" alt="Abounding Harvest logo">
+          </a>
+          <p>Your premier direct farm source for fresh vegetables, white maize, and high-quality wheat.</p>
+          <div class="footer-social-pills">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/263771058127" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation Links</h4>
+          <ul>
+            <li><a href="aabout my farm.html">About Our Farm</a></li>
+            <li><a href="shop.html">Produce Catalog</a></li>
+            <li><a href="wholesale.html">Wholesale Procurement</a></li>
+            <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+            <li><a href="contact uss.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Crops -->
+        <div class="footer-col">
+          <h4>Our Crops</h4>
+          <ul>
+            <li><a href="shop.html">Fresh Tomatoes</a></li>
+            <li><a href="shop.html">Irish Potatoes</a></li>
+            <li><a href="shop.html">Green Cabbage</a></li>
+            <li><a href="shop.html">White Button Mushroom</a></li>
+            <li><a href="shop.html">Brown Onions</a></li>
+            <li><a href="shop.html">Oranges</a></li>
+          </ul>
+        </div>
+
+        <!-- Farm Office -->
+        <div class="footer-col">
+          <h4>Farm Office</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</li>
+            <li>
+              <a href="https://wa.me/263782798993" target="_blank" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-phone"></i> +263 77 105 8127
+              </a>
+            </li>
+            <li>
+              <a href="mailto:nyakupfuyafarm@gmail.com" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="footer-trust-bar">
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-seedling"></i>
+          <div>
+            <span>100% Organically Grown</span>
+            <small>Sourced directly from our fields</small>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-truck"></i>
+          <div>
+            <span>Same-Day Farm Dispatch</span>
+            <small>For orders placed before 10 AM</small>
+          </div>
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <div class="bottom-flex">
+          <p>&copy; 2026 ABOUNDING <strong>Harvest</strong>. All Rights Reserved.</p>
+          <div class="bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SMART SCROLL BUTTON -->
+  <button id="scrollBtn" aria-label="Scroll" onclick="handleScrollAction()">↓</button>
+
+  <script>
+    function handleScrollAction() {
+      if (window.scrollY > 300) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollBtn');
+      if (window.scrollY > 300) {
+        btn.innerHTML = '↑';
+      } else {
+        btn.innerHTML = '↓';
+      }
+    });
+  </script>
+
+</body>
+</html>

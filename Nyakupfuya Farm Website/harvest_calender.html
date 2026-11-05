@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvest Calendar | Abounding Harvest</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets & Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-phone"></i> Dudely & Dave: +263 77 105 8127 / +263 78 279 8993</span>
+        <span><i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com</span>
+        <span><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</span>
+      </div>
+      <div class="top-socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/263782798993" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="main-header">
+    <div class="container header-flex">
+      <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Nyakupfuya Farm Logo">
+        <span>Abounding <strong>Harvest</strong></span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aabout my farm.html">About Our Farm</a></li>
+          <li><a href="shop.html">Our Produce</a></li>
+          <li><a href="wholesale.html">Wholesale & Bulk</a></li>
+          <li><a href="harvest_calender.html" class="active">Harvest Calendar</a></li>
+          <li><a href="contact uss.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= PAGE BANNER ================= -->
+  <header class="page-banner calendar-banner">
+    <div class="container">
+      <h1>Seasonal Crop & Harvest Calendar</h1>
+      <p>Track our planting and harvesting cycles throughout the year to plan your supply orders in advance.</p>
+    </div>
+  </header>
+
+  <!-- ================= CALENDAR SECTION ================= -->
+  <section class="calendar-section">
+    <div class="container">
+      
+      <div class="calendar-legend">
+        <div class="legend-item"><span class="box peak"></span> Peak Harvest (High Stock)</div>
+        <div class="legend-item"><span class="box available"></span> Moderate Availability</div>
+        <div class="legend-item"><span class="box planting"></span> Planting / Growing Cycle</div>
+      </div>
+
+      <!-- HARVEST TIMELINE TABLE -->
+      <div class="calendar-table-wrapper">
+        <table class="harvest-table">
+          <thead>
+            <tr>
+              <th>Crop</th>
+              <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th>
+              <th>May</th><th>Jun</th><th>Jul</th><th>Aug</th>
+              <th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tomatoes</strong></td>
+              <td class="available">Avail</td><td class="available">Avail</td><td class="peak">Peak</td><td class="peak">Peak</td>
+              <td class="available">Avail</td><td class="planting">Plant</td><td class="planting">Plant</td><td class="available">Avail</td>
+              <td class="peak">Peak</td><td class="peak">Peak</td><td class="available">Avail</td><td class="available">Avail</td>
+            </tr>
+            <tr>
+              <td><strong>Potatoes</strong></td>
+              <td class="peak">Peak</td><td class="peak">Peak</td><td class="available">Avail</td><td class="planting">Plant</td>
+              <td class="planting">Plant</td><td class="available">Avail</td><td class="peak">Peak</td><td class="peak">Peak</td>
+              <td class="available">Avail</td><td class="planting">Plant</td><td class="available">Avail</td><td class="peak">Peak</td>
+            </tr>
+            <tr>
+              <td><strong>Cabbage</strong></td>
+              <td class="available">Avail</td><td class="available">Avail</td><td class="peak">Peak</td><td class="peak">Peak</td>
+              <td class="peak">Peak</td><td class="peak">Peak</td><td class="available">Avail</td><td class="available">Avail</td>
+              <td class="planting">Plant</td><td class="planting">Plant</td><td class="available">Avail</td><td class="peak">Peak</td>
+            </tr>
+            <tr>
+              <td><strong>White Maize</strong></td>
+              <td class="planting">Grow</td><td class="planting">Grow</td><td class="available">Dry</td><td class="peak">Peak</td>
+              <td class="peak">Peak</td><td class="peak">Silo</td><td class="available">Silo</td><td class="available">Silo</td>
+              <td class="available">Silo</td><td class="planting">Plant</td><td class="planting">Plant</td><td class="planting">Grow</td>
+            </tr>
+            <tr>
+              <td><strong>Wheat</strong></td>
+              <td class="available">Silo</td><td class="available">Silo</td><td class="planting">Prep</td><td class="planting">Plant</td>
+              <td class="planting">Grow</td><td class="planting">Grow</td><td class="planting">Grow</td><td class="planting">Grow</td>
+              <td class="available">Dry</td><td class="peak">Peak</td><td class="peak">Peak</td><td class="available">Silo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="calendar-cta">
+        <h3>Want to reserve volume for upcoming harvests?</h3>
+        <p>Pre-order contracts guarantee fixed price protection before peak harvesting begins.</p>
+        <a href="wholesale.html" class="btn btn-primary">Lock In Pre-Harvest Contracts</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact" class="main-footer">
+    <div class="container">
+      
+      <!-- Newsletter Strip -->
+      <div class="footer-newsletter-banner">
+        <div class="newsletter-text">
+          <h3>Subscribe to Farm Updates</h3>
+          <p>Get weekly harvest alerts and fresh produce discounts.</p>
+        </div>
+       
+        <form action="https://formspree.io/f/xyegdaql" method="POST" class="newsletter-form">
+          <input type="hidden" name="_subject" value="New Farm Newsletter Subscriber">
+          <input type="email" name="subscriber_email" class="newsletter-input" placeholder="Enter your email address..." required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        
+        <!-- Brand & Social -->
+        <div class="footer-logo">
+          <a href="index.html" class="logo footer-logo">
+            <img src="logo.jpg" alt="Abounding Harvest logo">
+          </a>
+          <p>Your premier direct farm source for fresh vegetables, white maize, and high-quality wheat.</p>
+          <div class="footer-social-pills">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/263782798993" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation Links</h4>
+          <ul>
+            <li><a href="aabout my farm.html">About Our Farm</a></li>
+            <li><a href="shop.html">Produce Catalog</a></li>
+            <li><a href="wholesale.html">Wholesale Procurement</a></li>
+            <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+            <li><a href="contact uss.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Crops -->
+        <div class="footer-col">
+          <h4>Our Crops</h4>
+          <ul>
+            <li><a href="shop.html">Fresh Tomatoes</a></li>
+            <li><a href="shop.html">Irish Potatoes</a></li>
+            <li><a href="shop.html">Green Cabbage</a></li>
+            <li><a href="shop.html">White Button Mushroom</a></li>
+            <li><a href="shop.html">Brown Onions</a></li>
+            <li><a href="shop.html">Oranges</a></li>
+          </ul>
+        </div>
+
+        <!-- Farm Office -->
+        <div class="footer-col">
+          <h4>Farm Office</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</li>
+            <li>
+              <a href="https://wa.me/263782798993" target="_blank" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-phone"></i> +263 77 105 8127
+              </a>
+            </li>
+            <li>
+              <a href="mailto:nyakupfuyafarm@gmail.com" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="footer-trust-bar">
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-seedling"></i>
+          <div>
+            <span>100% Organically Grown</span>
+            <small>Sourced directly from our fields</small>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-truck"></i>
+          <div>
+            <span>Same-Day Farm Dispatch</span>
+            <small>For orders placed before 10 AM</small>
+          </div>
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <div class="bottom-flex">
+          <p>&copy; 2026 ABOUNDING <strong>Harvest</strong>. All Rights Reserved.</p>
+          <div class="bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <div style="overflow-x: auto; width: 100%;">
+  <table class="calendar-table">
+    <!-- Existing table content -->
+  </table>
+</div>
+
+  <!-- SMART DUAL SCROLL BUTTON -->
+  <button id="scrollBtn" aria-label="Scroll Toggle">↓</button>
+
+</body>
+</html>

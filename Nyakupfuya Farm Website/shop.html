@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Produce Catalog | Abounding Harvest</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Navigation Bar Styling */
+    .main-header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+    .nav-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    .nav-list a:hover, .nav-list a.active {
+      color: #2d6a4f;
+    }
+
+    /* Scrollable Cart Modal Styling */
+    .cart-modal-overlay {
+      display: none; /* JS controls toggle */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+    }
+    .cart-modal-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 450px;
+      width: 90%;
+      margin: 3% auto;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+    #cart-items-container {
+      max-height: 320px;
+      overflow-y: auto;
+      padding-right: 8px;
+      margin-bottom: 15px;
+    }
+    /* Scrollbar styling */
+    #cart-items-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    #cart-items-container::-webkit-scrollbar-thumb {
+      background-color: #2d6a4f;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="main-header">
+    <div class="container header-flex">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #2d6a4f; font-size: 1.4rem; font-weight: 700;">
+        <img src="logo.jpg" alt="Abounding Harvest Logo" style="width: 45px; height: 45px; object-fit: contain;">
+        <span>Abounding <strong>Harvest</strong></span>
+      </a>
+      <nav id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aabout my farm.html">About Our Farm</a></li>
+          <li><a href="shop.html" class="active">Our Produce</a></li>
+          <li><a href="wholesale.html">Wholesale & Bulk</a></li>
+          <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+          <li><a href="contact uss.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="cart-btn" style="background: #2d6a4f; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER BANNER -->
+  <header class="page-banner">
+    <div class="container">
+      <h1>Farm Produce Catalogue</h1>
+      <p>Direct farm-fresh vegetables and harvested grains with transparent pricing and live availability status.</p>
+    </div>
+  </header>
+
+  <!-- CATALOG SECTION -->
+  <section class="catalog-page-section">
+    <div class="container">
+      <br>
+      
+      <!-- TOOLBAR: FILTERS & DOWNLOAD -->
+      <div class="catalog-toolbar">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Items</button>
+          <button class="filter-btn" data-filter="vegetables">Fresh Vegetables</button>
+          <button class="filter-btn" data-filter="grains">Bulk Grains</button>
+        </div>
+        
+        <a href="Weekly Price Sheet.pdf" download="Nyakupfuya_Farm_Weekly_Price_Sheet.pdf" class="btn btn-secondary download-pdf">
+  
+          <i class="fa-solid fa-file-pdf"></i> Download Weekly Price Sheet
+      
+        </a>
+      </div>
+
+      <!-- CATALOG GRID -->
+      <div class="product-grid catalog-grid">
+
+        <!-- Tomatoes -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge in-stock"><i class="fa-solid fa-circle-check"></i> In Harvest</span>
+            <img src="toma.jpg" alt="Tomatoes">
+          </div>
+          <div class="product-details">
+            <span class="category">Fresh Vegetables</span>
+            <h3>Grade-A Jam Tomatoes</h3>
+            <p>Thick-walled, firm red tomatoes. Selected for long transport life and high juice yield.</p>
+            <ul class="specs-list">
+              <li><strong>Grade:</strong> Class 1 Export Quality</li>
+              <li><strong>Packaging:</strong> 10 kg Sturdy Plastic Crate / Box</li>
+              <li><strong>Min. Order:</strong> 1 Box</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">10 kg Box</span>
+              <span class="price">$12.00</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Grade-A Jam Tomatoes (10kg)', 12.00)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+        <!-- Potatoes -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge in-stock"><i class="fa-solid fa-circle-check"></i> In Harvest</span>
+            <img src="pota.jpg" alt="Potatoes">
+          </div>
+          <div class="product-details">
+            <span class="category">Tubers & Root Crops</span>
+            <h3>Irish Table Potatoes</h3>
+            <p>Washed, smooth-skin medium/large potatoes. High dry matter content suitable for frying and baking.</p>
+            <ul class="specs-list">
+              <li><strong>Grade:</strong> Medium / Large Select</li>
+              <li><strong>Packaging:</strong> 15 kg Breathable Mesh Pocket</li>
+              <li><strong>Min. Order:</strong> 1 Pocket</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">15 kg Pocket</span>
+              <span class="price">$10.50</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Irish Potatoes (15kg)', 10.50)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+        <!-- Cabbage -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge low-stock"><i class="fa-solid fa-triangle-exclamation"></i> Limited Stock</span>
+            <img src="cabb.jpg" alt="Cabbage">
+          </div>
+          <div class="product-details">
+            <span class="category">Fresh Vegetables</span>
+            <h3>Drumhead Green Cabbage</h3>
+            <p>Crisp, sweet, tightly wrapped heads grown using minimal bio-pesticide protocols.</p>
+            <ul class="specs-list">
+              <li><strong>Average Head Weight:</strong> 3.0 kg – 4.5 kg</li>
+              <li><strong>Packaging:</strong> Bulk Net Bags / Per Head</li>
+              <li><strong>Min. Order:</strong> 5 Heads</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">Per Single Head</span>
+              <span class="price">$1.80</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Drumhead Cabbage (Single Head)', 1.80)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+        <!-- White Button Mushroom -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge in-stock"><i class="fa-solid fa-circle-check"></i> Limited Stock</span>
+            <img src="mush.jpg" alt="White Button Mushroom">
+          </div>
+          <div class="product-details">
+            <span class="category">Fresh Produce</span>
+            <h3>Premium White Button Mushrooms</h3>
+            <p>Freshly harvested, hand-picked white button mushrooms. Grown in controlled conditions, clean and ready for cooking.</p>
+            <ul class="specs-list">
+              <li><strong>Moisture Content:</strong> &lt; 90%</li>
+              <li><strong>Packaging:</strong> 5 kg Food-Grade Ventilated Crates</li>
+              <li><strong>Min. Order:</strong> 1 Crate</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">5 kg Crate</span>
+              <span class="price">$18.00</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('White Button Mushroom (5kg)', 18.00)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+        <!-- Onion -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge in-stock"><i class="fa-solid fa-circle-check"></i> Limited Stock</span>
+            <img src="onion.jpg" alt="Bulbs">
+          </div>
+          <div class="product-details">
+            <span class="category">Vegetables & Bulbs</span>
+            <h3>Grade-A Brown Onions</h3>
+            <p>Hand-sorted, sun-cured brown onions. Tested low moisture, firm bulbs with long shelf life.</p>
+            <ul class="specs-list">
+              <li><strong>Moisture Content:</strong> 13% Min</li>
+              <li><strong>Packaging:</strong> 10 kg Heavy Duty Mesh Bags</li>
+              <li><strong>Min. Order:</strong> 1 Bag</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">10 kg Bag</span>
+              <span class="price">$12.00</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Grade-A Brown Onions (10kg)', 12.00)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+        <!-- Oranges -->
+        <div class="product-card" data-category="vegetables">
+          <div class="product-thumb">
+            <span class="badge in-stock"><i class="fa-solid fa-circle-check"></i> Limited Stock</span>
+            <img src="oranges.jpg" alt="Citrus">
+          </div>
+          <div class="product-details">
+            <span class="category">Fruits & Citrus</span>
+            <h3>Grade-A Valencia Oranges</h3>
+            <p>Hand-picked, washed and waxed Valencia oranges. High juice content and sweet flavour.</p>
+            <ul class="specs-list">
+              <li><strong>Moisture Content:</strong> 88%</li>
+              <li><strong>Packaging:</strong> 15 kg Standard Carton Boxes</li>
+              <li><strong>Min. Order:</strong> 2 Cartons</li>
+            </ul>
+            <div class="product-meta">
+              <span class="unit-label">15 kg Carton</span>
+              <span class="price">$22.00</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Grade-A Valencia Oranges (15kg)', 22.00)">
+              <i class="fa-solid fa-cart-plus"></i> Add to Basket
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPPING CART MODAL -->
+  <div class="cart-modal-overlay" id="cart-modal">
+    <div class="cart-modal-content">
+      
+      <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2d6a4f; padding-bottom: 12px; margin-bottom: 15px;">
+        <h3 style="margin: 0; color: #2d6a4f; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-basket-shopping"></i> Your Order Basket
+        </h3>
+        <button class="close-cart" id="close-cart" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+      </div>
+
+      <!-- SCROLLABLE CART ITEMS AREA -->
+      <div id="cart-items-container"></div>
+
+      <!-- TOTAL DISPLAY & ACTION BUTTONS -->
+      <div style="border-top: 1px solid #eee; padding-top: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: bold; color: #1b4332; margin-bottom: 15px;">
+          <span>Total Estimate:</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button onclick="cartApp.processCheckout('whatsapp')" style="background: #25D366; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Order via WhatsApp
+          </button>
+          <button onclick="cartApp.processCheckout('email')" style="background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-solid fa-envelope" style="font-size: 1.1rem;"></i> Order via Email
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="main-footer">
+    <div class="container">
+      
+      <!-- Newsletter Strip -->
+      <div class="footer-newsletter-banner">
+        <div class="newsletter-text">
+          <h3>Subscribe to Farm Updates</h3>
+          <p>Get weekly harvest alerts and fresh produce discounts.</p>
+        </div>
+       
+        <form action="https://formspree.io/f/xyegdaql" method="POST" class="newsletter-form">
+          <input type="hidden" name="_subject" value="New Farm Newsletter Subscriber">
+          <input type="email" name="subscriber_email" class="newsletter-input" placeholder="Enter your email address..." required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- CLEAN CUSTOM ALERT DIALOG -->
+<div id="clean-alert" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 2000; justify-content: center; align-items: center;">
+  <div style="background: #ffffff; width: 340px; padding: 24px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center; font-family: sans-serif;">
+    <p id="clean-alert-msg" style="margin: 0 0 20px 0; font-size: 0.95rem; color: #333333; line-height: 1.5; font-weight: 500;"></p>
+    <button type="button" onclick="closeCleanAlert()" style="background: #2d6a4f; color: white; border: none; padding: 10px 28px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 0.9rem;">OK</button>
+  </div>
+</div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        
+        <div class="footer-logo">
+          <a href="index.html" class="logo footer-logo">
+            <img src="logo.jpg" alt="Abounding Harvest logo">
+          </a>
+          <p>Your premier direct farm source for fresh vegetables, white maize, and high-quality wheat.</p>
+          <div class="footer-social-pills">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/263782798993?text=Hello%20Nyakupfuya%20Farm,%20I%20have%20an%20inquiry." target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation Links</h4>
+          <ul>
+            <li><a href="aabout my farm.html">About Our Farm</a></li>
+            <li><a href="shop.html">Produce Catalog</a></li>
+            <li><a href="wholesale.html">Wholesale Procurement</a></li>
+            <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+            <li><a href="contact uss.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Crops</h4>
+          <ul>
+            <li><a href="shop.html">Fresh Tomatoes</a></li>
+            <li><a href="shop.html">Irish Potatoes</a></li>
+            <li><a href="shop.html">Green Cabbage</a></li>
+            <li><a href="shop.html">White Button Mushroom</a></li>
+            <li><a href="shop.html">Brown Onions</a></li>
+            <li><a href="shop.html">Oranges</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Farm Office</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</li>
+            <li>
+              <a href="https://wa.me/263782798993?text=Hello%20Nyakupfuya%20Farm" target="_blank" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-phone"></i> +263 77 105 8127
+              </a>
+            </li>
+            <li>
+              <a href="mailto:nyakupfuyafarm@gmail.com?subject=Catalog%20Inquiry" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-trust-bar">
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-seedling"></i>
+          <div>
+            <span>100% Organically Grown</span>
+            <small>Sourced directly from our fields</small>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-truck"></i>
+          <div>
+            <span>Same-Day Farm Dispatch</span>
+            <small>For orders placed before 10 AM</small>
+          </div>
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="bottom-flex">
+          <p>&copy; 2026 ABOUNDING <strong>Harvest</strong>. All Rights Reserved.</p>
+          <div class="bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  
+  <button id="scrollBtn" aria-label="Scroll" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    ↑
+  </button>
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyakupfuya Farm | Quality Fresh Produce & Grains</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Shared Stylesheet & Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    /* SCROLL BUTTONS */
+    #scrollBtn {
+      position: fixed;
+      right: 30px;
+      bottom: 30px; 
+      width: 50px;
+      height: 50px;
+      background: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    #scrollBtn:hover {
+      background: #1b4332;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP UTILITY BAR ================= -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span>
+          <a href="https://wa.me/263771058127?text=Hi%20Nyakupfuya%20Farm,%20I%20would%20like%20to%20inquire%20about%20your%20produce" target="_blank" style="color: inherit; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 5px;"></i> Order via WhatsApp (+263782798993)
+          </a>
+        </span>
+        <span><i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com</span>
+        <span><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</span>
+      </div>
+      <div class="top-socials">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/263782798993" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN NAVIGATION BAR ================= -->
+  <header class="main-header sticky-header">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="logo">
+        <img src="logo3.png" alt="Abounding Harvest Logo">
+      </a>
+
+      <!-- Header Search Bar (Handles live filtering via script.js or page redirect) -->
+      <div class="header-search">
+        <form class="search-form" action="shop.html" method="GET">
+          <input type="text" name="query" placeholder="Search vegetables, grains..." aria-label="Search produce" required>
+          <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aabout my farm.html">About Our Farm</a></li>
+          
+          <!-- Dropdown Category Menu -->
+          <li class="dropdown">
+            <a href="shop.html">Our Produce <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="shop.html?cat=vegetables">Fresh Vegetables</a></li>
+              <li><a href="shop.html?cat=grains">Maize & Wheat</a></li>
+              <li><a href="shop.html?cat=tubers">Irish Potatoes</a></li>
+              <li><a href="shop.html?cat=mushrooms">Organic Mushrooms</a></li>
+            </ul>
+          </li>
+
+          <li><a href="wholesale.html">Wholesale & Bulk</a></li>
+          <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+          <li><a href="contact uss.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="cart-btn" id="cart-btn" aria-label="View Order Basket">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO BANNER SECTION ================= -->
+  <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('bckg.avif') center/cover no-repeat; min-height: 420px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem; color: #ffffff;">
+    <span style="color: #f39c12; font-weight: bold; margin-bottom: 1rem;">DIRECT FROM OUR FIELDS TO YOUR TABLE</span>
+    <h1 style="color: #ffffff !important; text-shadow: 0 2px 6px rgba(0,0,0,0.8); font-size: 2.5rem; margin-bottom: 1rem;">
+      Fresh Farm Produce Grown With Care &amp; Delivered With Trust
+    </h1>
+    <p style="color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.8); max-width: 600px; margin-bottom: 2rem;">
+      Nyakupfuya Farm supplies premium vegetables, grains, and agricultural products to households, retailers, restaurants, and commercial buyers.
+    </p>
+    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <a href="shop.html" class="btn btn-primary">Browse Our Produce</a>
+      <a href="wholesale.html" class="btn btn-secondary">Wholesale Supply</a>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCT CATEGORIES ================= -->
+  <section class="quick-categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="margin-top: 40px;">Quality Agricultural Products For Every Customer</h2>
+        <p>From fresh vegetables to bulk grains, we provide reliable farm products for homes and businesses.</p>
+      </div>
+
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-carrot"></i>
+          </div>
+          <h3>Fresh Vegetables</h3>
+          <p>Fresh tomatoes, cabbages, potatoes and other seasonal crops harvested with quality in mind.</p>
+          <a href="shop.html" class="link-btn">
+            Explore Vegetables <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="category-card highlighted">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-wheat-awn"></i>
+          </div>
+          <h3>Premium Grains</h3>
+          <p>High-quality maize and wheat supplied for households, retailers and processors.</p>
+          <a href="shop.html" class="link-btn">
+            Explore Grains <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="category-card">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3>Wholesale Supply</h3>
+          <p>Reliable bulk supply solutions for supermarkets, institutions and commercial partners.</p>
+          <a href="wholesale.html" class="link-btn">
+            Partner With Us <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">WHY NYAKUPFUYA FARM</span>
+        <h2>Growing Quality Through Passion And Modern Farming</h2>
+        <p>We focus on producing fresh, dependable agricultural products while maintaining high standards from planting to delivery.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fa-solid fa-seedling"></i>
+          <h3>Quality Farming</h3>
+          <p>Every crop receives careful attention to ensure freshness and quality.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Fresh From The Farm</h3>
+          <p>Our produce is harvested and handled to maintain excellent quality.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-handshake"></i>
+          <h3>Reliable Partnership</h3>
+          <p>We work with customers who need consistent and trustworthy supply.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-truck"></i>
+          <h3>Wholesale Support</h3>
+          <p>We provide solutions for businesses requiring larger quantities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FARM STATS COUNTER ================= -->
+  <section class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h2><span class="counter">500</span>+</h2>
+        <p>Hectares Under Cultivation</p>
+      </div>
+      <div class="stat-item">
+        <h2><span class="counter">1200</span>+</h2>
+        <p>Tons Harvested Annually</p>
+      </div>
+      <div class="stat-item">
+        <h2><span class="counter">250</span>+</h2>
+        <p>Trusted Customers</p>
+      </div>
+      <div class="stat-item">
+        <h2>100%</h2>
+        <p>Locally Produced</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PRODUCE ================= -->
+  <section id="produce" class="produce-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FARM FRESH SELECTION</span>
+        <h2>Our Premium Farm Produce</h2>
+        <p>Carefully selected products grown, harvested and prepared to meet the needs of families, retailers and businesses.</p>
+      </div>
+
+      <div class="product-grid">
+        <!-- TOMATO -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="badge">Fresh Harvest</span>
+            <img src="toma.jpg" alt="Fresh Jam Tomatoes">
+          </div>
+          <div class="product-details">
+            <span class="category">Vegetables</span>
+            <h3>Fresh Jam Tomatoes</h3>
+            <p>Bright red, juicy tomatoes suitable for households, restaurants and retail.</p>
+            <div class="product-meta">
+              <span class="unit-label">10 kg Box</span>
+              <span class="price">$12.00</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Fresh Jam Tomatoes', 12.00)">
+              <i class="fa-solid fa-cart-plus"></i> Add To Order
+            </button>
+          </div>
+        </div>
+
+        <!-- POTATO -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="badge">Popular</span>
+            <img src="pota.jpg" alt="Irish Potatoes">
+          </div>
+          <div class="product-details">
+            <span class="category">Tubers</span>
+            <h3>Irish Table Potatoes</h3>
+            <p>High-quality potatoes with excellent cooking texture and freshness.</p>
+            <div class="product-meta">
+              <span class="unit-label">15 kg Bag</span>
+              <span class="price">$10.50</span>
+            </div>
+            <button class="btn btn-add" onclick="cartApp.addItem('Irish Table Potatoes', 10.50)">
+              <i class="fa-solid fa-cart-plus"></i> Add To Order
+            </button>
+          </div>
+        </div>
+
+        <!-- MUSHROOM / GRAIN -->
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="badge bulk">Premium</span>
+            <img src="mush.jpg" alt="Farm Produce">
+          </div>
+          <div class="product-details">
+            <span class="category">Farm Products</span>
+            <h3>Quality Farm Selection</h3>
+            <p>Premium agricultural products prepared for both households and bulk buyers.</p>
+            <div class="product-meta">
+              <span class="unit-label">Bulk Supply</span>
+              <span class="price">Request Quote</span>
+            </div>
+            <a href="wholesale.html" class="btn btn-add">
+              <i class="fa-solid fa-phone"></i> Contact Farm
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="shop.html" class="btn btn-primary">View Complete Product Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FARM INTRO PREVIEW ================= -->
+  <section class="farm-preview">
+    <div class="container story-grid">
+      <div class="story-image">
+        <img src="logo.jpg" width="300" height="200" alt="Nyakupfuya Farm Logo">
+      </div>
+      <div class="story-content">
+        <span class="section-tag">ABOUT OUR FARM</span>
+        <h2>Growing Food With Purpose And Passion</h2>
+        <p>Nyakupfuya Farm is committed to producing fresh, quality agricultural products while supporting reliable food supply for families and businesses.</p>
+        <p>Through dedication, careful farming practices and attention to quality, we deliver produce customers can trust.</p>
+        <a href="aabout my farm.html" class="btn btn-primary">Discover Our Farm</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CUSTOMER TRUST</span>
+        <h2>What Our Customers Say</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>"Nyakupfuya Farm provides fresh produce with consistent quality. Their service is reliable and professional."</p>
+          <h4>Retail Customer</h4>
+        </div>
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>"We appreciate their commitment to supplying quality agricultural products when we need them."</p>
+          <h4>Wholesale Partner</h4>
+        </div>
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>"Fresh farm products and excellent customer service."</p>
+          <h4>Local Buyer</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CALL TO ACTION ================= -->
+  <section style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('bckg.avif') center/cover no-repeat; padding: 4.5rem 2rem; text-align: center; color: #ffffff; margin-top: 2rem;">
+    <h2 style="color: #ffffff !important; text-shadow: 0 2px 6px rgba(0,0,0,0.8); font-size: 2.2rem; margin-bottom: 0.75rem;">
+      Ready To Order Fresh Farm Produce?
+    </h2>
+    <p style="color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.8); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.1rem;">
+      Contact Nyakupfuya Farm today for fresh produce, wholesale bulk supply, and commercial partnership opportunities across Zimbabwe.
+    </p>
+
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="shop.html" class="btn" style="background-color: #2d6a4f; color: #ffffff; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 6px; font-weight: bold;">
+        Shop Produce
+      </a>
+      <a href="contact uss.html" class="btn" style="background-color: #e67e22; color: #ffffff; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 6px; font-weight: bold;">
+        Contact Farm
+      </a>
+      <a href="wholesale.html" class="btn" style="background-color: #25d366; color: #ffffff; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 6px; font-weight: bold;">
+        Get Wholesale Quote
+      </a>
+    </div>
+  </section>
+
+ <!-- SHOPPING CART MODAL -->
+  <div class="cart-modal-overlay" id="cart-modal">
+    <div class="cart-modal-content" style="background: #ffffff; padding: 20px; border-radius: 12px; max-width: 450px; width: 90%; margin: 3% auto; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.25);">
+      
+      <!-- Modal Header -->
+      <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2d6a4f; padding-bottom: 12px; margin-bottom: 15px;">
+        <h3 style="margin: 0; color: #2d6a4f; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-basket-shopping"></i> Your Order Basket
+        </h3>
+        <button class="close-cart" id="close-cart" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
+      </div>
+
+      <!-- Scrollable Cart Items Container -->
+      <div id="cart-items-container" style="max-height: 320px; overflow-y: auto; padding-right: 8px; margin-bottom: 15px;"></div>
+
+      <!-- Modal Footer (Total & Checkout Action Buttons) -->
+      <div style="border-top: 1px solid #eee; padding-top: 15px; margin-top: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: bold; color: #1b4332; margin-bottom: 15px;">
+          <span>Total Estimate:</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button type="button" onclick="cartApp.processCheckout('whatsapp')" style="background: #25D366; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Order via WhatsApp
+          </button>
+          <button type="button" onclick="cartApp.processCheckout('email')" style="background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-solid fa-envelope" style="font-size: 1.1rem;"></i> Order via Email
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK BAR -->
+  <div class="floating-quick-bar">
+    <a href="https://wa.me/263782798993" class="btn-quick whatsapp" target="_blank" rel="noopener">
+      WhatsApp Us
+    </a>
+    <a href="tel:+263771058127" class="btn-quick call">
+      Call Now
+    </a>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact" class="main-footer">
+    <div class="container">
+      
+      <!-- Newsletter Strip -->
+      <div class="footer-newsletter-banner">
+        <div class="newsletter-text">
+          <h3>Subscribe to Farm Updates</h3>
+          <p>Get weekly harvest alerts and fresh produce discounts.</p>
+        </div>
+        
+        <form action="https://formspree.io/f/xyegdaql" method="POST" class="newsletter-form">
+          <input type="hidden" name="_subject" value="New Farm Newsletter Subscriber">
+          <input type="email" name="subscriber_email" class="newsletter-input" placeholder="Enter your email address..." required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        
+        <!-- Brand & Social -->
+        <div class="footer-logo">
+          <a href="index.html" class="logo footer-logo">
+            <img src="logo.jpg" alt="Abounding Harvest logo">
+          </a>
+          <p>Your premier direct farm source for fresh vegetables, white maize, and high-quality wheat.</p>
+          <div class="footer-social-pills">
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/263782798993" target="_blank" rel="noopener" class="social-pill" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation Links</h4>
+          <ul>
+            <li><a href="aabout my farm.html">About Our Farm</a></li>
+            <li><a href="shop.html">Produce Catalog</a></li>
+            <li><a href="wholesale.html">Wholesale Procurement</a></li>
+            <li><a href="harvest_calender.html">Harvest Calendar</a></li>
+            <li><a href="contact uss.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Our Crops -->
+        <div class="footer-col">
+          <h4>Our Crops</h4>
+          <ul>
+            <li><a href="shop.html">Fresh Tomatoes</a></li>
+            <li><a href="shop.html">Irish Potatoes</a></li>
+            <li><a href="shop.html">Green Cabbage</a></li>
+            <li><a href="shop.html">White Button Mushroom</a></li>
+            <li><a href="shop.html">Brown Onions</a></li>
+            <li><a href="shop.html">Oranges</a></li>
+          </ul>
+        </div>
+
+        <!-- Farm Office -->
+        <div class="footer-col">
+          <h4>Farm Office</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i> Nyakupfuya Farm, 27Km peg Mutoko Rd, Zimbabwe</li>
+            <li>
+              <a href="https://wa.me/263782798993" target="_blank" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-phone"></i> +263 77 105 8127 / +263 78 279 8993
+              </a>
+            </li>
+            <li>
+              <a href="mailto:nyakupfuyafarm@gmail.com" style="color: inherit; text-decoration: none;">
+                <i class="fa-solid fa-envelope"></i> nyakupfuyafarm@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="footer-trust-bar">
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-seedling"></i>
+          <div>
+            <span>100% Organically Grown</span>
+            <small>Sourced directly from our fields</small>
+          </div>
+        </div>
+        <div class="trust-badge-item">
+          <i class="fa-solid fa-truck"></i>
+          <div>
+            <span>Same-Day Farm Dispatch</span>
+            <small>For orders placed before 10 AM</small>
+          </div>
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom">
+        <div class="bottom-flex">
+          <p>&copy; 2026 ABOUNDING <strong>Harvest</strong>. All Rights Reserved.</p>
+          <div class="bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- DUAL DIRECTION SCROLL BUTTON -->
+  <button id="scrollBtn" aria-label="Scroll">↓</button>
+
+</body>
+</html>
